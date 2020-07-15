@@ -26,13 +26,14 @@ public class CardHitService {
             count++;
             cardHit.get().setHitCount(count);
             cardHitRepository.save(cardHit.get());
+            return cardHit.get();
         }else{
             CardHit cardHit = new CardHit();
             cardHit.setCardNumber(cardNumber);
             cardHit.setHitCount(1);
             cardHitRepository.save(cardHit);
+            return cardHit;
         }
-        return null;
     }
 
     public Page<CardHit> getAll(Pageable pageable){

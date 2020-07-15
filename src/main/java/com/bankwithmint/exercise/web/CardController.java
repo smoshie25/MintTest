@@ -36,7 +36,7 @@ public class CardController {
 
         CustomerResponse customerResponse = new CustomerResponse();
 
-        CardResponse cardResponse = getDataItems(cardNum);
+        CardResponse cardResponse = getDataItem(cardNum);
         if(cardResponse!=null){
             customerResponse.setSuccess(true);
             Payload payload = new Payload();
@@ -61,7 +61,7 @@ public class CardController {
 
 
 
-    public static CardResponse getDataItems(String cardNum){
+    public static CardResponse getDataItem(String cardNum){
 
         RestTemplate restTemplate = new RestTemplate();
         try{
